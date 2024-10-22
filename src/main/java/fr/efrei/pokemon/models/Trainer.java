@@ -16,6 +16,9 @@ public class Trainer {
 	@OneToMany
 	private List<Pokemon> team;
 
+	@OneToMany(mappedBy = "leader")
+	private List<Arena> arenas; // Arènes gérées par le dresseur
+
 	public String getId() {
 		return id;
 	}
@@ -38,5 +41,13 @@ public class Trainer {
 
 	public void setTeam(List<Pokemon> team) {
 		this.team = team;
+	}
+
+	public List<Arena> getArenas() {
+		return arenas;
+	}
+
+	public void setArenas(List<Arena> arenas) {
+		this.arenas = arenas;
 	}
 }
